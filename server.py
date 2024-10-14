@@ -15,7 +15,7 @@ app = FastAPI()
 
 @app.get("/")
 async def hello() -> str:
-    return "hello!/n"
+    return "hello!"
 
 if __name__ == '__main__':
     # 将host设置为0.0.0.0，本地才可以访问

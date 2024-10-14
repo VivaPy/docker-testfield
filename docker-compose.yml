@@ -1,0 +1,23 @@
+version: '3.4'
+
+services:
+  pyapp:
+    build: .
+    container_name: py-app
+    ports:
+      - target: 8000
+        published: 8000
+    networks:
+      - egg1
+
+  egg1:
+    container_name: egg1
+    image: praqma/network-multitool:latest
+    networks:
+      - egg1
+
+
+networks:
+  egg1:
+    driver: bridge
+
